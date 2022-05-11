@@ -1,0 +1,26 @@
+.main-head{
+    height: 180px;
+    width: 1440px;
+    background-color: aqua;
+    text-align: center;
+}
+h1{
+    padding-top: 55px;
+}
+.topic{
+    height: 154px;
+    width: 357px;
+    background-color: beige;
+}
+.post{
+    height: 154px;
+    width: 978px;
+    background-color: beige;
+}
+.qna{
+    margin-top: 25px;
+    border-style: solid;
+}
+.border{
+    border-style: solid;
+}
