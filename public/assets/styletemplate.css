@@ -1,0 +1,38 @@
+h3{
+    margin-top: 75px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.butt{
+    margin-top: 30px;
+    margin-left: 42.5%;
+}
+.buttt{
+    margin-top: 30px;
+    margin-left: 42.5%;
+}
+.newLists{
+    margin-left: 15%;
+    margin-right: 15%;
+    border-style: solid;
+    border-color: #5F7161;
+}
+#xyz{
+    margin-left: 15%;
+    margin-right: 15%;
+    border-style: solid;
+    border-color: #5F7161;
+}
+body{
+    border-style: solid;
+    border-color: #5F7161;
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #F9F3EE;
+}
+.setMar{
+    margin-top: 30px;
+    margin-left: 45%;
+    margin-bottom: 20px;
+}
