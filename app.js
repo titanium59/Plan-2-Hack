@@ -86,6 +86,9 @@ app.put('/comment/:id', async(req,res)=> {
     console.log(ans);
     res.redirect(`/comment/${id}`);
 })
+app.get('/userinfo',(req,res) => {
+    res.render("userinfo.ejs")
+})
 app.listen(3000,() => {
     console.log("on port 3000");
 })

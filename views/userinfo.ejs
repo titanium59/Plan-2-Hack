@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Stats</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Workout Visual Stastics</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/login/627a6a6afd8fa8df0852b011">Back To UserInfo</a>
+            </div>
+          </div>
+        </div>
+    </nav>
+    
+    <main class="container-fluid">
+    <div style="width: 900px; height: 60px;"></div>
+    <div id="barchart_comparison" style="width: 900px; height: 500px;"></div>
+    <div style="width: 900px; height: 200px;"></div>
+    <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+    <div style="width: 900px; height: 200px;"></div>
+    <div id="1RM_score">
+        <h2>One-Repetition Max Data</h2>
+        <p style="width: 900px; height: 1px;"></p>
+        <section class="container">
+        <table class="table caption table-bordered">
+            <caption>1RM = (weight*100)/(100-[reps*2.5]) floored to nearest integer</caption>
+            <thead class="table-primary">
+              <tr>
+                <th scope="col">S. No.</th>
+                <th scope="col">Exercise Name</th>
+                <th scope="col">Current 1RM score</th>
+              </tr>
+            </thead>
+            <tbody class="table-info">
+              <tr>
+                <th scope="row">1</th>
+                <td>Incline Bench</td>
+                <td>22</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Chest Press</td>
+                <td>14</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Shoulder Press</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Lateral Raise</td>
+                <td>7</td>
+              </tr>              
+              <tr>
+                <th scope="row">5</th>
+                <td>Triceps Extension</td>
+                <td>6</td>
+              </tr>              
+              <tr>
+                <th scope="row">6</th>
+                <td>Triceps Pushdown</td>
+                <td>26</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+    </div>
+    </main>
+    
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+  
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Exercise Name', 'Performance Index of Set 1', 'Performance Index of Set 2', 'Performance Index of Set 3'],
+            ['Incline Bench', 18, 21, 19.5],
+            ['Chest Press', 14, 14, 14],
+            ['Shoulder Press', 24.5, 24.5, 17.5],
+            ['Lateral Raise', 6, 6, 6],
+            ['Triceps Extension', 5, 5, 5],
+            ['Triceps Pushdown', 20, 20, 20]
+          ]);
+  
+          var options = {
+            chart: {
+              title: 'Per Set Stats for Today',
+              subtitle: 'Performance Index = (weight*reps)/10',
+            },
+            bars: 'horizontal' // Required for Material Bar Charts.
+          };
+  
+          var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+  
+          chart.draw(data, google.charts.Bar.convertOptions(options));
+        }
+      </script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+  
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Exercise Name', 'Previous Performance Index', 'Current Performance Index'],
+            ['Incline Bench', 13.7, 19.5],
+            ['Chest Press', 11.2, 14,],
+            ['Shoulder Press', 14, 22.1],
+            ['Lateral Raise', 6, 6],
+            ['Triceps Extension', 5, 5],
+            ['Triceps Pushdown', 20, 20]
+          ]);
+  
+          var options = {
+            chart: {
+              title: 'Performance Comparison',
+              subtitle: 'Performance Index = (weight*reps)/10',
+            },
+            bars: 'horizontal' // Required for Material Bar Charts.
+          };
+  
+          var chart = new google.charts.Bar(document.getElementById('barchart_comparison'));
+  
+          chart.draw(data, google.charts.Bar.convertOptions(options));
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+    ></script>
+</body>
+</html>
